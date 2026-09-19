@@ -1,6 +1,6 @@
 # Yorkshire Fell & Field — website
 
-Static marketing site for Yorkshire Fell & Field, a countryside venture in North Yorkshire (fieldsports and country skills, glamping, weddings and events, field-to-fork experiences).
+Static marketing site for Yorkshire Fell & Field, a countryside venture in Yorkshire (fieldsports and country skills, glamping, weddings and events, field-to-fork experiences).
 
 Plain HTML, CSS and a little vanilla JavaScript — no build step, no external fonts, no tracking. Illustrations are hand-drawn inline SVG.
 
