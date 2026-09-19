@@ -234,7 +234,7 @@ form.enquiry { background: var(--white); border: 1px solid var(--stone); border-
 .pb { display: grid; gap: .9rem; }
 .ph { margin: 0; overflow: hidden; border-radius: var(--radius); box-shadow: var(--shadow); background: var(--stone); border: 4px solid var(--white); }
 .ph img { display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 3 / 2; }
-.pb-note { font-size: .85rem; color: var(--ink-soft); margin: .8rem 0 0; text-align: right; font-style: italic; }
+.pb-note { font-family: var(--serif); font-size: 1rem; color: var(--ink-soft); margin: .9rem 0 0; text-align: left; font-style: italic; }
 @media (min-width: 52rem) {
   .pb-2 { grid-template-columns: 1fr 1fr; }
   .pb-2 .ph img { aspect-ratio: 4 / 3; }
@@ -243,3 +243,10 @@ form.enquiry { background: var(--white); border: 1px solid var(--stone); border-
   .pb-3 .ph:first-child img { aspect-ratio: auto; height: 100%; min-height: 22rem; }
   .pb-3 .ph:not(:first-child) img { aspect-ratio: 16 / 10; }
 }
+
+/* Contact form status and honeypot */
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.form-msg { padding: .9rem 1.1rem; border-radius: 10px; margin-bottom: 1.2rem; font-weight: 500; }
+.form-msg.ok { background: #e4efdc; border: 1px solid #a9c39c; color: #24401d; }
+.form-msg.err { background: #f7e3da; border: 1px solid #d9a58a; color: #6b2a10; }
+.form-msg[hidden] { display: none; }

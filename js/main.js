@@ -13,27 +13,48 @@
 
   var form = document.getElementById("enquiry-form");
   if (!form) return;
+  var status = document.getElementById("form-status");
+  var send = document.getElementById("f-send");
+  var select = document.getElementById("f-interest");
 
-  // Pre-select an activity from ?interest=slug
+  function show(kind, text) {
+    status.hidden = false;
+    status.className = "form-msg " + kind;
+    status.textContent = text;
+    status.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }
+
+  // Pre-select an activity from ?interest=slug; show thanks after a no-JS submit (?sent=1)
   var params = new URLSearchParams(window.location.search);
   var wanted = params.get("interest");
-  var select = document.getElementById("f-interest");
   if (wanted && select) {
     for (var i = 0; i < select.options.length; i++) {
       if (select.options[i].value === wanted) { select.selectedIndex = i; break; }
     }
   }
+  if (params.get("sent") === "1") {
+    show("ok", "Thank you \u2014 your message has gone. We\u2019ll be in touch by email.");
+  }
 
-  // No backend: build a mailto: link so the visitor can review before sending.
-  // TODO: real contact details — swap for a real address (or a form service) when available.
+  // Send with fetch so the visitor stays on the page; without JS the form posts normally.
   form.addEventListener("submit", function (e) {
     e.preventDefault();
-    var name = document.getElementById("f-name").value.trim();
-    var interest = select.options[select.selectedIndex].text;
-    var msg = document.getElementById("f-msg").value.trim();
-    var subject = "Interest in Yorkshire Fell & Field" + (select.value ? ": " + interest : "");
-    var body = "Hello,\n\nI\u2019d like to register my interest.\n\n" +
-      "Name: " + name + "\nInterested in: " + interest + "\n\n" + (msg ? msg + "\n\n" : "") + "Thanks";
-    window.location.href = "mailto:hello@yorkshirefellandfield.co.uk?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+    var data = new FormData(form);
+    data.delete("redirect");
+    data.set("interest", select.value ? select.options[select.selectedIndex].text : "Not specified");
+    send.disabled = true; send.textContent = "Sending\u2026";
+    fetch(form.action, { method: "POST", body: data, headers: { "Accept": "application/json" } })
+      .then(function (r) { return r.json().then(function (j) { return { ok: r.ok && j.success, j: j }; }); })
+      .then(function (res) {
+        if (res.ok) {
+          form.reset();
+          show("ok", "Thank you \u2014 your message has gone. We\u2019ll be in touch by email.");
+        } else {
+          show("err", "Sorry, that didn\u2019t go through. Please try again in a little while.");
+        }
+      })
+      .catch(function () { show("err", "Sorry, that didn\u2019t go through. Please check your connection and try again."); })
+      .then(function () { send.disabled = false; send.textContent = "Send enquiry"; });
   });
 })();

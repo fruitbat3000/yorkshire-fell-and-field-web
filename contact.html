@@ -47,10 +47,20 @@
 <section class="section" id="enquire">
   <div class="wrap split">
     <div>
-      <form class="enquiry" id="enquiry-form" novalidate>
+      <form class="enquiry" id="enquiry-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="f475ad6e-886c-4571-93f8-1e3956c1effd">
+        <input type="hidden" name="subject" value="New enquiry from the Yorkshire Fell &amp; Field website">
+        <input type="hidden" name="from_name" value="Yorkshire Fell &amp; Field website">
+        <input type="hidden" name="redirect" value="https://yorkshirefellandfield.co.uk/contact.html?sent=1#enquire">
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div id="form-status" class="form-msg" role="status" aria-live="polite" hidden></div>
         <div class="field">
           <label for="f-name">Your name</label>
           <input id="f-name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="f-email">Your email address</label>
+          <input id="f-email" name="email" type="email" autocomplete="email" required>
         </div>
         <div class="field">
           <label for="f-interest">What are you interested in?</label>
@@ -60,15 +70,13 @@
           <label for="f-msg">Anything you&rsquo;d like to tell us? <span style="font-weight:400">(optional)</span></label>
           <textarea id="f-msg" name="message" placeholder="A rough idea of who, when and how many is always helpful."></textarea>
         </div>
-        <button class="btn btn-primary" type="submit">Prepare my email</button>
-        <p class="form-note">This opens a pre-written email in your usual email app, so you can check it before sending. Nothing is stored or sent from this website.</p>
+        <button class="btn btn-primary" type="submit" id="f-send">Send enquiry</button>
+        <p class="form-note"><strong>Privacy:</strong> we use your name, email address and message only to reply to you and, if you ask, to keep you posted as the venture takes shape. Your enquiry is passed through a form-handling service (Web3Forms, which processes it in the United States) and arrives in our inbox &mdash; we don&rsquo;t store it on this website. If you&rsquo;d like your details removed, just send us another message here.</p>
       </form>
     </div>
     <div>
-      <h2>Prefer to write directly?</h2>
-      <!-- TODO: real contact details -->
-      <p class="email-line"><a href="mailto:hello@yorkshirefellandfield.co.uk">hello@yorkshirefellandfield.co.uk</a></p>
-      <p>We&rsquo;re a small, new venture, so please bear with us on reply times. We&rsquo;ll read everything.</p>
+      <h2>What happens next</h2>
+      <p>We read every enquiry ourselves and reply by email. We&rsquo;re a small, new venture, so please bear with us on reply times &mdash; we&rsquo;ll get back to you.</p>
       <div class="aside" style="margin-top:1.6rem">
         <h3>Good to know</h3>
         <ul>
@@ -112,12 +120,11 @@
         <ul>
           <li><a href="contact.html#enquire">Register your interest</a></li>
           <li><a href="contact.html#faq">Questions &amp; answers</a></li>
-          <!-- TODO: real contact details -->
-          <li><a href="mailto:hello@yorkshirefellandfield.co.uk">hello@yorkshirefellandfield.co.uk</a></li>
+          <li><a href="contact.html#enquire">Send us a message</a></li>
         </ul>
       </div>
     </div>
-    <p class="footer-base">&copy; 2026 Yorkshire Fell &amp; Field. We&rsquo;re not taking bookings yet &mdash; everything here describes what we&rsquo;re building. This site uses no cookies and no tracking.</p>
+    <p class="footer-base">&copy; 2026 Yorkshire Fell &amp; Field. We&rsquo;re not taking bookings yet &mdash; everything here describes what we&rsquo;re building. This site uses no cookies and no tracking. Photography via <a href="https://www.pexels.com">Pexels</a>.</p>
   </div>
 </footer>
 <script src="js/main.js" defer></script>
