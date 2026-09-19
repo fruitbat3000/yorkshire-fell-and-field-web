@@ -8,17 +8,17 @@ Plain HTML, CSS and a little vanilla JavaScript — no build step, no external f
 
 - `index.html`, `fieldsports.html`, `glamping.html`, `events.html`, `field-to-fork.html`, `about.html`, `contact.html`, `404.html`
 - `css/style.css` — all styling (colour palette defined as CSS variables at the top)
-- `js/main.js` — mobile menu and the contact-page email builder
+- `js/main.js` — mobile menu and the contact-form submission handler
 - `favicon.svg`
 
 ## Hosting
 
 Served by GitHub Pages from the `main` branch root at https://yorkshirefellandfield.co.uk (the `CNAME` file holds the custom domain; DNS is managed at the registrar). All links are relative, so it also works under the github.io repository sub-path.
 
-## To do before launch
+## Notes
 
-- Replace the placeholder contact email (search for `TODO: real contact details`).
-- Confirm the final trading name (plain text throughout; no raster logos).
+- Contact is through the enquiry form on `contact.html`; no email address is published on the site.
+- The trading name is plain text throughout (no raster logos), so a rename stays a find-and-replace.
 
 ## Photography
 
