@@ -228,3 +228,18 @@ form.enquiry { background: var(--white); border: 1px solid var(--stone); border-
 .prose ul { padding-left: 1.2rem; }
 .prose li { margin-bottom: .4rem; }
 .pull { font-family: var(--serif); font-size: clamp(1.4rem, 3vw, 1.9rem); line-height: 1.3; color: var(--bracken); border-left: 4px solid var(--rust); padding-left: 1.2rem; margin: 2rem 0; max-width: 34rem; }
+
+/* Photography */
+.photo-band { padding-block: 0 clamp(1rem, 3vw, 2rem); margin-top: clamp(-3.5rem, -6vw, -1.5rem); position: relative; z-index: 3; }
+.pb { display: grid; gap: .9rem; }
+.ph { margin: 0; overflow: hidden; border-radius: var(--radius); box-shadow: var(--shadow); background: var(--stone); border: 4px solid var(--white); }
+.ph img { display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 3 / 2; }
+.pb-note { font-size: .85rem; color: var(--ink-soft); margin: .8rem 0 0; text-align: right; font-style: italic; }
+@media (min-width: 52rem) {
+  .pb-2 { grid-template-columns: 1fr 1fr; }
+  .pb-2 .ph img { aspect-ratio: 4 / 3; }
+  .pb-3 { grid-template-columns: 1.5fr 1fr; grid-template-rows: 1fr 1fr; }
+  .pb-3 .ph:first-child { grid-row: 1 / span 2; }
+  .pb-3 .ph:first-child img { aspect-ratio: auto; height: 100%; min-height: 22rem; }
+  .pb-3 .ph:not(:first-child) img { aspect-ratio: 16 / 10; }
+}

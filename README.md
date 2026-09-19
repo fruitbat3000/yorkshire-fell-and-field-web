@@ -19,3 +19,22 @@ Served by GitHub Pages from the `main` branch root. All links are relative, so i
 
 - Replace the placeholder contact email (search for `TODO: real contact details`).
 - Confirm the final trading name (plain text throughout; no raster logos).
+
+## Photography
+
+The photographs in `images/` are temporary stock images from [Pexels](https://www.pexels.com), used under the [Pexels licence](https://www.pexels.com/license/) (free for commercial use; attribution not required but recorded here). Each page says they are illustrative. Replace them with our own photos as we take them; keep the file names or update the `<img>` tags.
+
+| File | Pexels photo |
+|---|---|
+| shooting-tweed | https://www.pexels.com/photo/6735578/ |
+| springer-spaniel | https://www.pexels.com/photo/21923103/ |
+| yurts-green-hillside | https://www.pexels.com/photo/30369006/ |
+| bell-tent-string-lights | https://www.pexels.com/photo/2376997/ |
+| yurt-interior | https://www.pexels.com/photo/20512331/ |
+| stretch-tent-long-table | https://www.pexels.com/photo/4994139/ |
+| garland-table-dusk | https://www.pexels.com/photo/32179374/ |
+| campfire-cast-iron | https://www.pexels.com/photo/9123787/ |
+| honeycomb-frame | https://www.pexels.com/photo/28124217/ |
+| foraged-chanterelles | https://www.pexels.com/photo/32810827/ |
+| dales-farmland | https://www.pexels.com/photo/30131266/ |
+| stone-barn-hillside | https://www.pexels.com/photo/9017967/ |
