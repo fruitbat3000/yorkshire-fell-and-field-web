@@ -13,7 +13,7 @@ Plain HTML, CSS and a little vanilla JavaScript — no build step, no external f
 
 ## Hosting
 
-Served by GitHub Pages from the `main` branch root. All links are relative, so it works under a repository sub-path and will work unchanged on a custom domain (add a `CNAME` file when one is set up).
+Served by GitHub Pages from the `main` branch root at https://yorkshirefellandfield.co.uk (the `CNAME` file holds the custom domain; DNS is managed at the registrar). All links are relative, so it also works under the github.io repository sub-path.
 
 ## To do before launch
 
